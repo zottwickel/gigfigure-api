@@ -1,1 +1,3 @@
-TRUNCATE users;
+TRUNCATE 
+  users
+  contacts;
