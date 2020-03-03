@@ -5,7 +5,7 @@ const ContactsService = {
     return db
       .select('*')
       .from('contacts')
-      .where(user_id)
+      .where('user_id', user_id)
   },
   getContactById(db, contact_id) {
     return db
@@ -45,7 +45,7 @@ const ContactsService = {
     }
   },
   serializeContacts(contacts) {
-    return contacts.map(this.serializeContact)
+    return contacts.map(contact => this.serializeContact(contact))
   },
 }
 
