@@ -13,12 +13,12 @@ VALUES
 
 INSERT INTO casecontacts (contact_id, case_id)
 VALUES
-  ('a33aab5d-b959-4360-8e17-f60effe37d64', '1'),
-  ('d5b35839-3331-476e-87d9-ae835b02137d', '1'),
-  ('5b1a71c8-049d-4acd-b622-2073db7bfda8', '2'),
-  ('5b1a71c8-049d-4acd-b622-2073db7bfda8', '3'),
-  ('d5b35839-3331-476e-87d9-ae835b02137d', '3'),
-  ('8a4dc845-6799-4a93-9c33-e936da032e49', '3'),
-  ('8a4dc845-6799-4a93-9c33-e936da032e49', '4');
+  ('22d72c1f-3e30-4dad-a2a0-8c9e90294493', '1'),
+  ('b8808356-8f89-438e-a6ae-896c4e3644f6', '1'),
+  ('5d3252d0-88b5-4d71-89da-89ccca969b9f', '2'),
+  ('5d3252d0-88b5-4d71-89da-89ccca969b9f', '3'),
+  ('b8808356-8f89-438e-a6ae-896c4e3644f6', '3'),
+  ('c934aadf-009d-4d23-b987-aa6fedd6ecd8', '3'),
+  ('c934aadf-009d-4d23-b987-aa6fedd6ecd8', '4');
 
 COMMIT;
