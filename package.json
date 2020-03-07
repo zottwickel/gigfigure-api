@@ -1,7 +1,10 @@
 {
-  "name": "express-boilerplate",
+  "name": "gigfigure-api",
   "version": "1.0.0",
-  "description": "",
+  "description": "This is the API for GigFigure.com",
+  "engines": {
+    "node": "10.16"
+  },
   "main": "index.js",
   "scripts": {
     "test": "mocha --require test/setup.js",
@@ -14,7 +17,7 @@
     "deploy": "git push heroku master"
   },
   "keywords": [],
-  "author": "",
+  "author": "Scott McKell",
   "license": "ISC",
   "dependencies": {
     "bcryptjs": "^2.4.3",
