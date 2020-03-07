@@ -17,7 +17,7 @@ const CasesService = {
         'co.contact_id'
       )
       .groupBy('ca.case_id', 'caco.casecontact_id', 'co.contact_id')
-      .orderBy('ca.case_id', 'asc')
+      .orderBy('ca.case_id', 'desc')
   },
   insertCase(db, newCase) {
     return db
