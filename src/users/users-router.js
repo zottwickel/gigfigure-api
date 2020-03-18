@@ -1,23 +1,23 @@
-const express = require('express')
-const path = require('path')
-const UsersService = require('./users-service')
+const express = require('express');
+const path = require('path');
+const UsersService = require('./users-service');
 
-const usersRouter = express.Router()
-const jsonParser = express.json()
+const usersRouter = express.Router();
+const jsonParser = express.json();
 
 usersRouter
   .post('/', jsonParser, (req, res, next) => {
-    const { password, user_name, email } = req.body
-    for (const field of [ 'user_name', 'password', 'email'])
+    const { password, user_name, email } = req.body;
+    for (const field of [ 'user_name', 'password', 'email']);
       if (!req.body[field])
         return res.status(400).json({
           error: `Missing '${field}' in request body`
-        })
+        });
 
-    const passwordError = UsersService.validatePassword(password)
+    const passwordError = UsersService.validatePassword(password);
 
     if (passwordError)
-      return res.status(400).json({ error: passwordError })
+      return res.status(400).json({ error: passwordError });
 
     UsersService.hasUserWithUserName(
       req.app.get('db'),
@@ -25,7 +25,7 @@ usersRouter
     )
       .then(hasUserWithUserName => {
         if (hasUserWithUserName)
-          return res.status(400).json({ error: `Username already taken` })
+          return res.status(400).json({ error: `Username already taken` });
         
         return UsersService.hashPassword(password)
           .then(hashedPassword => {
@@ -34,7 +34,7 @@ usersRouter
               password: hashedPassword,
               email,
               date_created: 'now()',
-            }
+            };
 
             return UsersService.insertUser(
               req.app.get('db'),
@@ -44,11 +44,11 @@ usersRouter
                 res
                   .status(201)
                   .location(path.posix.join(req.originalUrl, `/${user.user_id}`))
-                  .json(UsersService.serializeUser(user))
-              })
-          })
+                  .json(UsersService.serializeUser(user));
+              });
+          });
       })
-      .catch(next)
-  })
+      .catch(next);
+  });
 
-module.exports = usersRouter
+module.exports = usersRouter;
