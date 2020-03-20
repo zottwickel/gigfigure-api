@@ -1,7 +1,9 @@
 const express = require('express');
 const path = require('path');
 const UsersService = require('./users-service');
-
+/**
+ * Users endpoints
+ */
 const usersRouter = express.Router();
 const jsonParser = express.json();
 

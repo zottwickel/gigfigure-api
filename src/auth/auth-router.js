@@ -1,6 +1,8 @@
 const express = require('express');
 const AuthService = require('./auth-service');
-
+/**
+ * Sets up auth routes.
+ */
 const authRouter = express.Router();
 const jsonParser = express.json();
 

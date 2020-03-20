@@ -1,7 +1,9 @@
 const bcrypt = require('bcryptjs');
 const jwt = require('jsonwebtoken');
 const config = require('../config');
-
+/**
+ * Sets up auth db handling.
+ */
 const AuthService = {
   getUserWithEmail(db, email) {
     return db('users')

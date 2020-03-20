@@ -1,9 +1,9 @@
 const express = require('express');
-const path = require('path');
 const CasesService = require('./cases-service');
 const { requireAuth } = require('../middleware/jwt-auth');
-const uuid = require('uuid');
-
+/**
+ * Sets up cases routes.
+ */
 const casesRouter = express.Router();
 const jsonParser = express.json();
 

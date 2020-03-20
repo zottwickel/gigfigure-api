@@ -1,35 +1,37 @@
-const xss = require('xss')
-
+const xss = require('xss');
+/**
+ * Sets up methods for handling contacts in the db.
+ */
 const ContactsService = {
   getContactsByUser(db, user_id) {
     return db
       .select('*')
       .from('contacts')
-      .where('user_id', user_id)
+      .where('user_id', user_id);
   },
   getContactById(db, contact_id) {
     return db
       .select('*')
       .from('contacts')
       .where(contact_id)
-      .first()
+      .first();
   },
   insertContact(db, newContact) {
     return db
       .insert(newContact)
       .into('contacts')
       .returning('*')
-        .then(rows => rows[0])
+        .then(rows => rows[0]);
   },
   deleteContact(db, contact_id) {
     return db('contacts')
       .where({ contact_id })
-      .delete()
+      .delete();
   },
   updateContact(db, contact_id, newFields) {
     return db('contacts')
       .where({ contact_id })
-      .update(newFields)
+      .update(newFields);
   },
   serializeContact(contact) {
     return {
@@ -42,11 +44,11 @@ const ContactsService = {
       notes: xss(contact.notes),
       date_modified: new Date(contact.date_modified),
       user_id: contact.user_id
-    }
+    };
   },
   serializeContacts(contacts) {
-    return contacts.map(contact => this.serializeContact(contact))
+    return contacts.map(contact => this.serializeContact(contact));
   },
-}
+};
 
-module.exports = ContactsService
+module.exports = ContactsService;

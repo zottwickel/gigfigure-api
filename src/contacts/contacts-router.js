@@ -1,7 +1,9 @@
 const express = require('express');
 const ContactsService = require('./contacts-service');
 const { requireAuth } = require('../middleware/jwt-auth');
-
+/**
+ * Sets up contacts endpoints.
+ */
 const contactsRouter = express.Router();
 const jsonParser = express.json();
 

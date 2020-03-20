@@ -8,9 +8,11 @@ const usersRouter = require('./users/users-router');
 const authRouter = require('./auth/auth-router');
 const casesRouter = require('./cases/cases-router');
 const contactsRouter = require('./contacts/contacts-router');
-
+/**
+ * Defines the app as an express app with some useful libraries.
+ * Sets up routes and error handling. 
+ */
 const app = express();
-
 const morganOption = (NODE_ENV === 'production')
   ? 'tiny'
   : 'common';

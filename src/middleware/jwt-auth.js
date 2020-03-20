@@ -1,5 +1,7 @@
 const AuthService = require('../auth/auth-service');
-
+/**
+ * Sets up JWT authentication and marries the user to the token.
+ */
 function requireAuth(req, res, next) {
   const authToken = req.get('Authorization') || '';
   let bearerToken;

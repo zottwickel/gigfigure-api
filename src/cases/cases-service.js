@@ -1,5 +1,7 @@
 const xss = require('xss');
-
+/**
+ * Sets up methods to retrieve cases from db.
+ */
 const CasesService = {
   getCasesbyUser(db, user_id) {
     return db
