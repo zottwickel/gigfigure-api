@@ -7,7 +7,7 @@ ALTER SEQUENCE cases_case_id_seq RESTART;
 INSERT INTO cases (case_notes, user_id)
 VALUES
   ('This is the first case.', '955f6c01-a9f6-44bb-a7fd-75d1933f922e'),
-  ('This is the seccond case', '955f6c01-a9f6-44bb-a7fd-75d1933f922e'),
+  ('This is the second case', '955f6c01-a9f6-44bb-a7fd-75d1933f922e'),
   ('This is the third case', '955f6c01-a9f6-44bb-a7fd-75d1933f922e'),
   ('This is the fourth case', '955f6c01-a9f6-44bb-a7fd-75d1933f922e');
 

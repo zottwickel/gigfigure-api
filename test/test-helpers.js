@@ -32,7 +32,7 @@ function makeUsersArray() {
       date_created: new Date().toISOString(),
       date_modified: new Date().toISOString()
     },
-  ]
+  ];
 }
 function makeContactsArray() {
   return [
@@ -43,7 +43,7 @@ function makeContactsArray() {
       subtype: 'Whislter',
       phone: '555-555-5555',
       email: 'joe@schmo.com',
-      notes: 'whisling guy from open mic',
+      notes: 'whistling guy from open mic',
       user_id: '955f6c01-a9f6-44bb-a7fd-75d1933f922e'
     },
     {
@@ -60,10 +60,10 @@ function makeContactsArray() {
       contact_id: '5d3252d0-88b5-4d71-89da-89ccca969b9f',
       name: 'Rodger Greenboro',
       type: 'Bar Owner',
-      subtype: 'The Lavendar Pig',
+      subtype: 'The Lavender Pig',
       phone: '555-555-5555',
       email: 'rodger@thelavendarpig.com',
-      notes: 'Owns Lavendar pig. Likes our sound',
+      notes: 'Owns Lavender pig. Likes our sound',
       user_id: '955f6c01-a9f6-44bb-a7fd-75d1933f922e'
     },
     {
@@ -76,7 +76,7 @@ function makeContactsArray() {
       notes: 'Contact for the museums foundation, wants to hire us for a gallery showing',
       user_id: '955f6c01-a9f6-44bb-a7fd-75d1933f922e'
     }
-  ]
+  ];
 }
 function makeCaseContactsArray() {
   return [
@@ -108,7 +108,7 @@ function makeCaseContactsArray() {
       contact_id: 'c934aadf-009d-4d23-b987-aa6fedd6ecd8',
       case_id: '4'
     }
-  ]
+  ];
 }
 function makeCasesArray() {
   return [
@@ -119,7 +119,7 @@ function makeCasesArray() {
     },
     {
       case_id: 2,
-      case_notes: 'This is the seccond case',
+      case_notes: 'This is the second case',
       user_id: '955f6c01-a9f6-44bb-a7fd-75d1933f922e'
     },
     {
@@ -132,7 +132,7 @@ function makeCasesArray() {
       case_notes: 'This is the fourth case',
       user_id: '955f6c01-a9f6-44bb-a7fd-75d1933f922e'
     }
-  ]
+  ];
 }
 
 function seedTestDatabase(db, users, casecontacts, cases, contacts) {
@@ -153,7 +153,7 @@ function seedTestDatabase(db, users, casecontacts, cases, contacts) {
       db
         .into('casecontacts')
         .insert(casecontacts)
-    )
+    );
 }
 
 function truncateTables(db) {
@@ -165,7 +165,7 @@ function truncateTables(db) {
       contacts;
       
       ALTER SEQUENCE cases_case_id_seq RESTART`
-  )
+  );
 }
 
 module.exports = {
@@ -175,4 +175,4 @@ module.exports = {
   makeCaseContactsArray,
   truncateTables,
   seedTestDatabase
-}
+};
