@@ -5,10 +5,13 @@ const helpers = require('./test-helpers');
 describe('Contacts Endpoints', function () {
   let db;
 
-  const testUsers = helpers.makeUsersArray();
-  const testCases = helpers.makeCasesArray();
+  const newDate = new Date().toISOString();
+  const testUsers = helpers.makeUsersArray(newDate);
+  const testCases = helpers.makeCasesArray(newDate);
   const testCaseContacts = helpers.makeCaseContactsArray();
-  const testContacts = helpers.makeContactsArray();
+  const testContacts = helpers.makeContactsArray(newDate);
+  const expectedContacts = helpers.makeExpectedContacts(newDate);
+  
 
   before('make knex instance', () => {
     db = knex({
@@ -34,9 +37,12 @@ describe('Contacts Endpoints', function () {
         testContacts
       )
     );
-    return supertest(app)
-      .get('/api/contacts')
-      .set({ Authorization: process.env.TEST_AUTH_TOKEN})
-      .expect(200);
+    it('responds 200 and all user contacts', () => {
+      return supertest(app)
+        .get('/api/contacts')
+        .set({ Authorization: process.env.TEST_AUTH_TOKEN })
+        .expect(200)
+        .expect(expectedContacts);
+    });
   });
 });

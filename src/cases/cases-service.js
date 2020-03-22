@@ -78,6 +78,15 @@ const CasesService = {
           });
         }
       }
+      newCase.contacts = newCase.contacts.sort((a,b) => {
+        const idA = a.contact_id;
+        const idB = b.contact_id;
+        if (idA > idB) {
+          return 1;
+        } else {
+          return -1;
+        }
+      });
       response.push(newCase);
     });
     const newResponse = [];
